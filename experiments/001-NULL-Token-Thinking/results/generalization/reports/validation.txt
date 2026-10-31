@@ -1,0 +1,7 @@
+baseline: original and extension inputs/targets identical; batched vs original scalar exact-match counts agree on 15 cases.
+null: original and extension inputs/targets identical; batched vs original scalar exact-match counts agree on 15 cases.
+6-digit data: 10,000 unique valid sums and exact operand lengths verified independently.
+7-digit data: 10,000 unique valid sums and exact operand lengths verified independently.
+All ten protected source/data/checkpoint/log hashes remain unchanged.
+Fresh training replay agrees with 160 original baseline loss log entries within their four-decimal precision.
+Saved matched checkpoint step/example/FLOP metadata agree with the reconstructed target schedule.

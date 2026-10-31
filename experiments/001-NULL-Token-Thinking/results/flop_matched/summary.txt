@@ -1,0 +1,33 @@
+FLOP-matched evaluation
+
+configuration,digits,accuracy,answer_loss,parameters,training_steps,estimated_training_flops
+baseline,5,0.9548,0.032913067144652246,95256,78125,59827680000000
+baseline,6,0.0,11.94821387745697,95256,78125,59827680000000
+baseline,7,0.0,26.60663581286083,95256,78125,59827680000000
+null_4,5,0.9841,0.012837577778239967,95328,78125,71660160000000
+null_4,6,0.0,11.714679626204095,95328,78125,71660160000000
+null_4,7,0.0,13.002001260571731,95328,78125,71660160000000
+baseline_matched,5,0.9657,0.025909333207089526,95256,93576,71659967791104
+baseline_matched,6,0.0,10.12978547877557,95256,93576,71659967791104
+baseline_matched,7,0.0,27.43876736113632,95256,93576,71659967791104
+
+Training from scratch used the original seed, data order, initialization, optimizer, learning rate and architecture.
+See metrics/actual_training.csv for actual steps, examples, compute and mismatch; reports/flop_method.txt for estimator limitations.
+Accuracy per training TFLOP is descriptive, not a universal efficiency measure: accuracy is bounded and nonlinear in compute.
+Inference FLOPs are reported in metrics/comparison.csv: full-prefix greedy forwards without a KV cache, through EOS.
+inference_flops_per_problem counts only active problems; batched_inference_flops_per_problem also includes finished rows.
+Failed OOD answers can terminate early and appear cheaper; inference cost must be read alongside accuracy.
+Training matching leaves additional NULL inference cost and vocabulary/position differences.
+Only one initialization seed was evaluated; no across-seed significance claim is supported.
+These controls do not establish learned reasoning or isolate positional effects.
+
+Actual matched steps: 93,576; examples: 5,988,864
+Estimated matched training FLOPs: 7.16599678e+13
+NULL training target FLOPs: 7.16601600e+13
+Relative budget mismatch: -0.000268223%
+
+Original-distribution inference (mean estimated dense FLOPs/problem):
+baseline: 21,600,938
+null_4: 26,610,844
+baseline_matched: 21,597,847
+In this single run the NULL model retains a same-distribution accuracy advantage over the compute-matched baseline.

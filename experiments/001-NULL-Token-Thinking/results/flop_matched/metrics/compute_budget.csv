@@ -1,0 +1,4 @@
+model,steps,examples,estimated_training_flops,mean_training_flops_per_step
+baseline,78125,5000000,59827680000000,765794304.0
+null,78125,5000000,71660160000000,917250048.0
+baseline_matched,93576,5988864,71659967791104,765794304.0

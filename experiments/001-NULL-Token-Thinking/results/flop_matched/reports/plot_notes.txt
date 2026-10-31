@@ -1,0 +1,4 @@
+Original efficiency curves recover interval means from rounded epoch-cumulative console logs.
+Their FLOP axis uses reconstructed mean padded step cost; all original shuffled batches have the same maximum length.
+Matched curve uses directly logged interval means and cumulative FLOPs.
+Five-digit label refers to the original up-to-five-digit distribution; each evaluation has 10,000 cases.

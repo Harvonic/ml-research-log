@@ -1,0 +1,11 @@
+Original train rows: 1,000,000; unique: 999,950
+Original test rows: 1,000,000; unique: 999,956
+Exact ordered train/test overlap: 97 unique expressions
+Test rows occurring in train: 97
+Test rows seen in train allowing operand reversal: 187
+Evaluated 10,000-row seed-42 test sample overlap with train: 0
+Original data contain 0- to 99,999-valued operands, NOT exclusively exactly five digits.
+The label '5-digit' means the original up-to-five-digit distribution.
+New datasets: exactly 6/7 positive operand digits; unique ordered pairs; Python integer targets.
+New operand ranges are disjoint from original train/test; no length-OOD overlap.
+Evaluation uses the same seed-42 sample of 10,000 original test rows as Train.py.

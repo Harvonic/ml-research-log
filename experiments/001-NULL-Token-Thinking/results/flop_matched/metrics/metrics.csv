@@ -1,0 +1,4 @@
+configuration,digits,null_count,extra_token,parameters,examples,correct,accuracy,answer_loss,answer_tokens,inference_flops_per_problem,batched_inference_flops_per_problem
+baseline_matched,5,0,<NULL>,95256,10000,9657,0.9657,0.025909333207089526,64879,21597846.984,23591280.1392
+baseline_matched,6,0,<NULL>,95256,10000,0,0.0,10.12978547877557,76075,11510283.2544,18020160.0
+baseline_matched,7,0,<NULL>,95256,10000,0,0.0,27.43876736113632,86086,4393758.8736,9746435.8656

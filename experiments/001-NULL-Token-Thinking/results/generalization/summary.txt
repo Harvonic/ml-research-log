@@ -1,0 +1,25 @@
+NULL-token generalization and ablation results
+
+Exact-answer accuracy (%); each cell uses 10,000 examples.
+Configuration             Original <=5      6 digits      7 digits
+baseline                        95.48%         0.00%         0.00%
+null_0                           0.00%         0.00%         0.00%
+null_1                           0.00%         0.00%         0.00%
+null_2                           0.00%         0.00%         0.00%
+null_3                           0.00%         0.00%         0.00%
+null_4                          98.41%         0.00%         0.00%
+null_8                           0.00%         0.00%         0.00%
+replacement_4                    1.52%         0.00%         0.00%
+
+Original evaluation sample is seed-42, matching Train.py; not all million test rows.
+Answer loss is token-weighted teacher-forced cross-entropy, including EOS and excluding prompt/extra tokens.
+Primary accuracy uses greedy generation, requires correct EOS termination, and uses each checkpoint's own vocabulary.
+NULL/PAD/UNK answer logits are forbidden exactly as in the original predictor.
+Ablations modify only prompt inputs. NULL checkpoint always retains its original vocabulary and weights.
+Counts other than four, and UNK replacement, are inference-time distribution shifts.
+Removal also shifts answer positions; replacement holds length fixed but is OOD.
+A drop under either intervention cannot establish latent reasoning or isolate the effect of sequence positions.
+No position-only control was trained, so extra computation and extra positions remain confounded.
+Longer inputs also reach learned absolute positions beyond the maximum used in original training; this possible source of failure is not isolated.
+See reports/data_audit.txt for leakage; metrics/carry_metrics.csv for carry-stratified counts/accuracies.
+Both original checkpoints score zero exact matches on the new lengths: no evidence of arithmetic length generalization.

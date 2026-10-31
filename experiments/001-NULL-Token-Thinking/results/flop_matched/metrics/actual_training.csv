@@ -1,0 +1,2 @@
+steps,examples,estimated_training_flops,target_flops,relative_mismatch,elapsed_seconds
+93576,5988864,71659967791104,71660160000000,-2.682228116723806e-06,1299.004359100014

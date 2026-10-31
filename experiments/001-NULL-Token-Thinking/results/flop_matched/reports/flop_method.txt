@@ -1,0 +1,16 @@
+Analytical dense-matmul estimate; one multiply-add = two FLOPs.
+Per layer forward: 8BLd^2 (QKV/output) + 4BL^2d (QK/AV) + 8BLd^2 (FFN width 2d).
+Head: 2BLdV. d=72, layers=2. Training FLOPs=3*forward (approximate backward).
+Full square attention is counted despite causal mask. No fused-kernel profiling used.
+Excludes biases, normalization, activations, softmax/CE, optimizer, clipping, embedding lookup and memory traffic.
+Uses actual maximum sequence length in each shuffled batch, including final partial batches.
+Sequences match Train.py: answer plus EOS shifted once; padded to batch maximum.
+Replays torch.randperm with separate CPU Generator(seed=42+epoch), batch size 64.
+Original run FLOPs are reconstructed from current code/data, not measured historical hardware counters.
+Closest whole optimizer step to the five-epoch NULL budget is used.
+Matching this estimator does not exactly match wall time, energy, or all GPU operations.
+New run uses seed 42, float32, default AdamW(lr=3e-4), clip_grad_norm=1, no LR schedule.
+Pre-encoding and device-resident tensors change data transfer only, preserving batch membership and targets.
+Device: cuda; PyTorch: 2.11.0+cu128
+Target NULL training FLOPs: 71660160000000; matched baseline steps: 93576
+Planned relative mismatch: -0.000268223%

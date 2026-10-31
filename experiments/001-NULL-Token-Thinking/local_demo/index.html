@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NULL Token Lab · Model Playground</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="NULL Token Lab home"><span class="brand-icon">∅</span> NULL TOKEN LAB <span class="divider">/</span> <span class="brand-sub">PLAYGROUND</span></a>
+    <span class="connection" id="connection"><span class="status-dot"></span><span id="connection-text">Connecting…</span></span>
+  </header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">A SMALL ARITHMETIC EXPERIMENT</p>
+      <h1>Try the models, side by side.</h1>
+      <p class="lede">One addition problem. Two pretrained Transformers.<br>See what changes with four extra NULL positions.</p>
+    </section>
+
+    <section class="composer" aria-label="Compare the models">
+      <form id="compare-form">
+        <label for="problem">YOUR ADDITION PROBLEM</label>
+        <div class="input-row">
+          <span class="input-prefix" aria-hidden="true">+</span>
+          <input id="problem" name="problem" type="text" value="12345 + 67890" placeholder="12345 + 67890" required maxlength="100" autocomplete="off" spellcheck="false" aria-describedby="input-help">
+          <button class="compare-button" id="compare-button" type="submit" disabled>Compare <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+      <div class="composer-bottom">
+        <p id="input-help">Press Enter to run both models.</p>
+        <div class="presets" aria-label="Generate a random problem">
+          <span>Try random</span>
+          <button type="button" data-digits="5" disabled>5-digit</button>
+          <button type="button" data-digits="6" disabled>6-digit</button>
+          <button type="button" data-digits="7" disabled>7-digit</button>
+        </div>
+      </div>
+      <p class="error-message" id="error" role="alert" hidden></p>
+    </section>
+
+    <div class="comparison-heading">
+      <p id="comparison-label">MODEL COMPARISON</p>
+      <p id="expected" aria-live="polite">Both models are ready for the same problem.</p>
+    </div>
+    <section class="model-grid" aria-label="Model predictions">
+      <article class="model-card baseline" id="baseline-card">
+        <div class="card-heading"><div class="model-identity"><span class="model-mark">B</span><div><h2>Baseline</h2><p>Original checkpoint · <span id="baseline-params">95,256</span> parameters</p></div></div><span class="result-badge" id="baseline-badge">Ready</span></div>
+        <div class="token-strip"><span class="strip-label">INPUT SETUP</span><span class="direct-token">Problem → Answer</span><span class="token-caption">0 extra positions</span></div>
+        <div class="prediction" aria-live="polite"><p class="answer-label">MODEL ANSWER</p><div class="answer" id="baseline-answer">—</div><p class="answer-note" id="baseline-note">Your next addition problem starts here.</p></div>
+        <div class="card-footer"><span id="baseline-timing">Generation time <b>—</b></span><span id="baseline-tokens">Answer tokens <b>—</b></span></div>
+      </article>
+      <article class="model-card null-model" id="null-card">
+        <div class="card-heading"><div class="model-identity"><span class="model-mark">∅</span><div><h2>NULL model</h2><p>Original checkpoint · <span id="null-params">95,328</span> parameters</p></div></div><span class="result-badge" id="null-badge">Ready</span></div>
+        <div class="token-strip"><span class="strip-label">INPUT SETUP</span><div class="null-tokens" aria-label="Four automatically inserted NULL tokens"><span>NULL</span><span>NULL</span><span>NULL</span><span>NULL</span></div><span class="token-caption">4 fixed positions</span></div>
+        <div class="prediction" aria-live="polite"><p class="answer-label">MODEL ANSWER</p><div class="answer" id="null-answer">—</div><p class="answer-note" id="null-note">The same problem, with four NULL tokens.</p></div>
+        <div class="card-footer"><span id="null-timing">Generation time <b>—</b></span><span id="null-tokens">Answer tokens <b>—</b></span></div>
+      </article>
+    </section>
+    <div class="context-note"><span class="note-icon" aria-hidden="true">i</span><p>Both models trained on operands from 0 to 99,999. Longer numbers explore generalization. Four NULL tokens are inserted automatically; the model does not choose them.</p></div>
+
+    <section class="history" id="history-section" hidden>
+      <div class="history-heading"><h3>Recent comparisons</h3><button type="button" id="clear-history">Clear</button></div>
+      <div class="history-scroll"><table><thead><tr><th scope="col">Problem</th><th scope="col">Baseline</th><th scope="col">NULL model</th><th scope="col">Correct sum</th></tr></thead><tbody id="history-body"></tbody></table></div>
+    </section>
+    <footer class="page-footer"><span>Greedy decoding · Local inference · Original baseline vs NULL</span><span id="device-label">Loading checkpoints…</span></footer>
+  </main>
+</body>
+</html>
