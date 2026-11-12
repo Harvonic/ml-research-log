@@ -1,0 +1,171 @@
+[
+  {
+    "lam": -2,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.4684298,
+    "val_loss_std": 0.01801142927976567,
+    "val_accuracy_mean": 0.4617834
+  },
+  {
+    "lam": -1,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.4466098,
+    "val_loss_std": 0.01871720911888305,
+    "val_accuracy_mean": 0.46480699999999997
+  },
+  {
+    "lam": 0,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.4002848,
+    "val_loss_std": 0.024753214169072942,
+    "val_accuracy_mean": 0.4715906
+  },
+  {
+    "lam": 0.1,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.3963618,
+    "val_loss_std": 0.025263382655535148,
+    "val_accuracy_mean": 0.4720068
+  },
+  {
+    "lam": 0.25,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.3929446,
+    "val_loss_std": 0.023141424562891633,
+    "val_accuracy_mean": 0.4724416
+  },
+  {
+    "lam": 0.5,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.3782342,
+    "val_loss_std": 0.03166429127897851,
+    "val_accuracy_mean": 0.475099
+  },
+  {
+    "lam": 1,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.350443,
+    "val_loss_std": 0.024614558466484842,
+    "val_accuracy_mean": 0.4798596
+  },
+  {
+    "lam": 1.25,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.3505722000000002,
+    "val_loss_std": 0.030169930405952252,
+    "val_accuracy_mean": 0.4798412
+  },
+  {
+    "lam": 1.5,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.3597204,
+    "val_loss_std": 0.029914403475583513,
+    "val_accuracy_mean": 0.4784546
+  },
+  {
+    "lam": 2,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.38098,
+    "val_loss_std": 0.03213093976994759,
+    "val_accuracy_mean": 0.4752344
+  },
+  {
+    "lam": 2.5,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.4010382,
+    "val_loss_std": 0.028729039153789996,
+    "val_accuracy_mean": 0.471853
+  },
+  {
+    "lam": 3,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.4158665999999998,
+    "val_loss_std": 0.026430619616270874,
+    "val_accuracy_mean": 0.4695068
+  },
+  {
+    "lam": 5,
+    "seeds": [
+      5,
+      12,
+      23,
+      42,
+      71
+    ],
+    "val_loss_mean": 2.4865782,
+    "val_loss_std": 0.029405768706156916,
+    "val_accuracy_mean": 0.4596032
+  }
+]
